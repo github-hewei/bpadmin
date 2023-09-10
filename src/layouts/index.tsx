@@ -1,8 +1,7 @@
 import { Link, Outlet } from 'umi';
 import styles from './index.less';
-import "./main.css"
-import { Alignment, Navbar, Button } from '@blueprintjs/core';
-import { Sidebar } from "./components"
+import { Alignment, Button } from '@blueprintjs/core';
+import { Sidebar, Navbar } from "./components"
 import { useState } from 'react';
 
 function Layout() {
@@ -12,7 +11,7 @@ function Layout() {
     <div className={styles.main}>
       <Sidebar />
       <div className={styles.content}>
-        <div className={styles.navbar}>Navbar</div>
+        <Navbar />
         <div className={styles.page}>
           <Outlet />
         </div>
