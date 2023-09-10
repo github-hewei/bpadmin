@@ -11,10 +11,11 @@ export default [
   },
   {
     title: "功能列表",
+    path: "/xxx",
     routes: [
       {
         title: "文档",
-        path: "/docs",
+        path: "/xxx/docs",
         component: "docs",
       },
     ],

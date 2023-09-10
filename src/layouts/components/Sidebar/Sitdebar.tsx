@@ -1,6 +1,6 @@
-import { useLocation, history, useRouteData } from "umi";
+import { useLocation, history } from "umi";
 import styles from "./style.less";
-import { Card, CardList, Classes, Collapse, Colors } from "@blueprintjs/core";
+import { Card, CardList, Classes, Collapse, Navbar, Alignment } from "@blueprintjs/core";
 import { ChevronDown, ChevronRight } from "@blueprintjs/icons";
 import { useState } from "react";
 import routes from "@/../config/routes";
@@ -30,6 +30,7 @@ const MenuGroup: React.FC<RouteItem & ExtendItem> = ({
   level,
 }) => {
   let [open, setOpen] = useState(false);
+  let location = useLocation();
 
   /**
    * 点击菜单事件
@@ -46,7 +47,7 @@ const MenuGroup: React.FC<RouteItem & ExtendItem> = ({
 
   return (
     <CardList compact={true}>
-      <Card style={{ display: "block" }}>
+      <Card style={{ display: "block", backgroundColor: location.pathname === path ? "#DCE0E5" : undefined }}>
         {level == 1 ? (
           <div onClick={handleClick} className={styles.menuRow}>
             <div>
@@ -83,7 +84,13 @@ const Sidebar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.logo}>
-        <h1 style={{ color: Colors.DARK_GRAY5 }}>后台管理</h1>
+        <Navbar className={Classes.DARK}>
+          <Navbar.Group align={Alignment.CENTER} style={{ justifyContent: "center" }}>
+            <Navbar.Heading style={{ margin: 0, fontSize: "18px" }}>
+              <span>数据管理系统</span>
+            </Navbar.Heading>
+          </Navbar.Group>
+        </Navbar>
       </div>
       <div className={styles.menu}>
         {ROUTES.map((item, index) => {

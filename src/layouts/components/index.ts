@@ -1,7 +1,9 @@
 import Sidebar from "./Sidebar/Sitdebar";
-import CustomNavbar from "./Navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
+import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 
 export {
   Sidebar,
-  CustomNavbar as Navbar,
+  Navbar,
+  Breadcrumbs,
 };
