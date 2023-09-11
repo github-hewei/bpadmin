@@ -21,8 +21,14 @@ export default [
     ],
   },
   {
+    title: "登录",
+    path: "/login",
+    component: "login/login",
+    layout: false,
+  },
+  {
     title: "404",
-    path: "*",
+    path: "/*",
     component: "404",
     layout: false,
   },
