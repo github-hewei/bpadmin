@@ -116,6 +116,7 @@ class Login extends Component<{}, LoginState> {
 
         <OverlayToaster
           position={Position.TOP}
+          maxToasts={1}
           ref={(ref) => (this.toaster = ref)}
         />
       </div>
